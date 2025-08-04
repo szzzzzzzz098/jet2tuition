@@ -1,0 +1,529 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>JET 2 TUITION</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>JET 2 TUITION</h1>
+                <img src="logo.png" alt="Jet 2 Tuition Logo" class="logo">
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active" data-tab="dashboard"><i class="fas fa-home"></i>Dashboard</li>
+                <li data-tab="announcements"><i class="fas fa-bullhorn"></i>Announcements</li>
+                <li data-tab="homework"><i class="fas fa-book"></i>Homework</li>
+                <li data-tab="classes"><i class="fas fa-calendar-alt"></i>Classes</li>
+                <li data-tab="performance"><i class="fas fa-chart-line"></i>Performance</li>
+                <li data-tab="resources"><i class="fas fa-file-alt"></i>Resources</li>
+                <li onclick="location.href='admin.php'"><i class="fas fa-user-shield"></i> Admin</li>
+                <a href="login.html" style="text-decoration: none; color: inherit;">
+               <li><i class="fas fa-sign-out-alt"></i> Logout</li>
+               </a>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h2>Student Dashboard</h2>
+                <div class="user-info">
+                    <img src="profile2.jpg" alt="User Avatar">
+                    <span>Lu Bi Jiang</span>
+                </div>
+            </div>
+            
+            <!-- Dashboard -->
+            <div id="dashboard" class="tab-content">
+                <div class="dashboard-cards">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Today's Classes</h3>
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                        <div>
+                            <p><strong>Math:</strong> 10:00 - 11:30</p>
+                            <p><strong>Physics:</strong> 14:00 - 15:30</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Pending Homework</h3>
+                            <i class="fas fa-tasks"></i>         
+                        </div>
+                        <div>
+                            <p>Math: Exercises 5-10</p>
+                            <p>Physics: Lab Report</p>
+                            <button id="viewAllHomeworkBtn" class="btn btn-primary" style="margin-top: 10px;">View All</button>
+
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Announcements</h3>
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="announcement-item">
+                            <div class="announcement-title">Midterm Schedule</div>
+                            <div class="announcement-date">2025-07-28</div>
+                        </div>
+                        <div class="announcement-item">
+                            <div class="announcement-title">Summer Course Registration</div>
+                            <div class="announcement-date">2025-07-25</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Learning Progress</h3>
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="progress-labels">
+                                <span>0%</span>
+                                <span>75%</span>
+                                <span>100%</span>
+                            </div>
+                            <p style="text-align: center; margin-top: 5px;">Math Course Progress</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Weekly Schedule</h3>
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Subject</th>
+                                <th>Teacher</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mon (07/28)</td>
+                                <td>10:00 - 11:30</td>
+                                <td>Advanced Math</td>
+                                <td>Mr. Lee</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>Tue (07/29)</td>
+                                <td>14:00 - 15:30</td>
+                                <td>Physics</td>
+                                <td>Mr. Wang</td>
+                                <td><span class="status-badge status-pending">Upcoming</span></td>
+                            </tr>
+                            <tr>
+                                <td>Wed (07/30)</td>
+                                <td>10:00 - 11:30</td>
+                                <td>Chemistry</td>
+                                <td>Ms. Zhang</td>
+                                <td><span class="status-badge status-pending">Upcoming</span></td>
+                            </tr>
+                            <tr>
+                                <td>Thu (07/31)</td>
+                                <td>14:00 - 15:30</td>
+                                <td>Advanced Math</td>
+                                <td>Mr. Lee</td>
+                                <td><span class="status-badge status-pending">Upcoming</span></td>
+                            </tr>
+                            <tr>
+                                <td>Fri (08/01)</td>
+                                <td>10:00 - 11:30</td>
+                                <td>Physics</td>
+                                <td>Mr. Wang</td>
+                                <td><span class="status-badge status-pending">Upcoming</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Announcements -->
+             <div id="announcements" class="tab-content hidden">
+                <div style="background-color: #ffffff;margin-bottom: 20px;border-radius: 10px; overflow: hidden;">
+               <div style="background-color: #8BA888; color: white; padding: 15px 20px;">
+               <h3 style="margin: 0;">All Announcements</h3>
+            </div>
+                    <div class="announcement-item">
+                        <div class="announcement-title">Midterm Exam Schedule</div>
+                        <div class="announcement-date">Posted: 2025-07-25</div>
+                        <p>Midterm exams will be held from August 5th to August 7th. Please prepare accordingly.</p>
+                    </div>
+                    <div class="announcement-item">
+                        <div class="announcement-title">Summer Course Registration</div>
+                        <div class="announcement-date">Posted: 2025-07-20</div>
+                        <p>Registration for summer intensive courses is now open. Please contact your homeroom teacher before July 30th.</p>
+                    </div>
+                    <div class="announcement-item">
+                        <div class="announcement-title">Study Materials Update</div>
+                        <div class="announcement-date">Posted: 2025-07-15</div>
+                        <p>New study materials for Math and Physics have been uploaded. Please download them.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Homework -->
+            <div id="homework" class="tab-content hidden">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>My Homework</h3>
+                        <div>
+                            <button class="btn btn-accent"><i class="fas fa-plus"></i> Add Homework</button>
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Assignment</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Add Math</td>
+                                <td>Exercises 5-10</td>
+                                <td>2025-07-28</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td>
+                               <a href="AddMath.jpg" target="_blank">
+                                 <button class="btn btn-primary" style="padding: 3px 8px; font-size: 12px;">View</button>
+                               </a>
+                             </td>
+                            </tr>
+                            <tr>
+                                <td>Physics</td>
+                                <td>Lab Report</td>
+                                <td>2025-07-30</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td>
+                               <a href="Physics.jpg" target="_blank">
+                                 <button class="btn btn-primary" style="padding: 3px 8px; font-size: 12px;">View</button>
+                               </a>
+                             </td>
+                            </tr>
+                            <tr>
+                                <td>Chemistry</td>
+                                <td>Chapter 3 Review</td>
+                                <td>2025-08-02</td>
+                                <td><span class="status-badge status-pending">Not Started</span></td>
+                                <td><button class="btn btn-primary" style="padding: 3px 8px; font-size: 12px;">View</button></td>
+                            </tr>
+                            <tr>
+                                <td>Math</td>
+                                <td>Midterm Review</td>
+                                <td>2025-08-04</td>
+                                <td><span class="status-badge status-pending">Not Started</span></td>
+                                <td><button class="btn btn-primary" style="padding: 3px 8px; font-size: 12px;">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>                           
+    
+            
+            <!-- Classes -->
+            <div id="classes" class="tab-content hidden">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>My Classes</h3>
+                        <button class="btn btn-accent"><i class="fas fa-plus"></i> Add Class</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Teacher</th>
+                                <th>Schedule</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Advanced Math</td>
+                                <td>Mr. Lee</td>
+                                <td>Mon, Thu 10:00-11:30</td>
+                                <td>Room 201</td>
+                                <td><span class="status-badge status-completed">Ongoing</span></td>
+                            </tr>
+                            <tr>
+                                <td>Physics</td>
+                                <td>Mr. Wang</td>
+                                <td>Tue, Fri 14:00-15:30</td>
+                                <td>Room 305</td>
+                                <td><span class="status-badge status-completed">Ongoing</span></td>
+                            </tr>
+                            <tr>
+                                <td>Chemistry</td>
+                                <td>Ms. Zhang</td>
+                                <td>Wed 10:00-11:30</td>
+                                <td>Room 202</td>
+                                <td><span class="status-badge status-completed">Ongoing</span></td>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td>Ms. Zhao</td>
+                                <td>Sat 9:00-11:00</td>
+                                <td>Online</td>
+                                <td><span class="status-badge status-pending">Not Started</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card" style="margin-top: 20px;">
+                    <div class="card-header">
+                        <h3>Upcoming Classes</h3>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Class</th>
+                                <th>Teacher</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2025-07-29 (Tue)</td>
+                                <td>14:00 - 15:30</td>
+                                <td>Physics</td>
+                                <td>Mr. Wang</td>
+                                <td><button class="btn btn-primary" style="padding: 3px 8px; font-size: 12px;">Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>2025-07-30 (Wed)</td>
+                                <td>10:00 - 11:30</td>
+                                <td>Chemistry</td>
+                                <td>Ms. Zhang</td>
+                                <td><button class="btn btn-primary" style="padding: 3px 8px; font-size: 12px;">Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>2025-07-31 (Thu)</td>
+                                <td>14:00 - 15:30</td>
+                                <td>Advanced Math</td>
+                                <td>Mr. Lee</td>
+                                <td><button class="btn btn-primary" style="padding: 3px 8px; font-size: 12px;">Details</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Performance -->
+            <div id="performance" class="tab-content hidden">
+                <div class="dashboard-cards">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Academic Performance</h3>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div style="text-align: center;">
+                            <canvas id="gradesChart" width="200" height="200" style="max-width: 100%;"></canvas>
+                            <p>Average Score: 85.5</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Study Time</h3>
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div style="text-align: center;">
+                            <canvas id="studyTimeChart" width="200" height="200" style="max-width: 100%;"></canvas>
+                            <p>This Week: 12 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Homework Completion</h3>
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div style="text-align: center;">
+                            <canvas id="homeworkChart" width="200" height="200" style="max-width: 100%;"></canvas>
+                            <p>This Month: 92%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Teacher Feedback</h3>
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <div>
+                            <p><strong>Math (Mr. Lee):</strong> Significant improvement, keep it up!</p>
+                            <p><strong>Physics (Mr. Wang):</strong> Needs improvement in lab work</p>
+                            <p><strong>Chemistry (Ms. Zhang):</strong> Active participation in class</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Detailed Grades</h3>
+                        <button class="btn btn-primary">Export Report</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Recent Test</th>
+                                <th>Midterm</th>
+                                <th>Final Exam</th>
+                                <th>Average</th>
+                                <th>Class Rank</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Math</td>
+                                <td>88</td>
+                                <td>92</td>
+                                <td>-</td>
+                                <td>90</td>
+                                <td>5/30</td>
+                            </tr>
+                            <tr>
+                                <td>Physics</td>
+                                <td>85</td>
+                                <td>87</td>
+                                <td>-</td>
+                                <td>86</td>
+                                <td>8/30</td>
+                            </tr>
+                            <tr>
+                                <td>Chemistry</td>
+                                <td>82</td>
+                                <td>84</td>
+                                <td>-</td>
+                                <td>83</td>
+                                <td>12/30</td>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td>90</td>
+                                <td>88</td>
+                                <td>-</td>
+                                <td>89</td>
+                                <td>6/30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Resources -->
+            <div id="resources" class="tab-content hidden">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Study Resources</h3>
+                        <button class="btn btn-accent"><i class="fas fa-upload"></i> Upload</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Resource</th>
+                                <th>Subject</th>
+                                <th>Upload Date</th>
+                                <th>Size</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Advanced Math Chapter 1</td>
+                                <td>Math</td>
+                                <td>2025-07-20</td>
+                                <td>2.4MB</td>
+                                <td>
+                                    <button class="btn btn-primary" style="padding: 3px 8px; font-size: 12px; margin-right: 5px;">Download</button>
+                                   <a href="https://www.slideshare.net/umairerusu/chapter-1-functions" target="_blank">
+                                   <button class="btn" style="padding: 3px 8px; font-size: 12px; background-color: var(--light-bg);">
+                                    Preview
+                                  </button>
+                                   </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Physics Lab Guide</td>
+                                <td>Physics</td>
+                                <td>2025-07-18</td>
+                                <td>3.1MB</td>
+                                <td>
+                                   <button class="btn btn-primary" style="padding: 3px 8px; font-size: 12px; margin-right: 5px;">Download</button>
+                                   <a href="https://anyflip.com/lewp/xqab/basic" target="_blank">
+                                   <button class="btn" style="padding: 3px 8px; font-size: 12px; background-color: var(--light-bg);">
+                                    Preview
+                                  </button>
+                                   </a>
+                                   </td>
+                            </tr>
+                            <tr>
+                                <td>Chemistry Formulae and Equation</td>
+                                <td>Chemistry</td>
+                                <td>2025-07-15</td>
+                                <td>1.8MB</td>
+                                <td>                           
+                                   <button class="btn btn-primary" style="padding: 3px 8px; font-size: 12px; margin-right: 5px;">Download</button>
+                                   <a href="https://anyflip.com/ctplw/jfim" target="_blank">
+                                   <button class="btn" style="padding: 3px 8px; font-size: 12px; background-color: var(--light-bg);">
+                                    Preview
+                                  </button>
+                                   </a>
+                                   </td>
+                            </tr>
+                            <tr>
+                                <td>English Grammar</td>
+                                <td>English</td>
+                                <td>2025-07-10</td>
+                                <td>1.2MB</td>
+                                <td>
+                                   <button class="btn btn-primary" style="padding: 3px 8px; font-size: 12px; margin-right: 5px;">Download</button>
+                                   <a href="https://englishfrench.academy/wp-content/uploads/2020/09/235_7-English-Grammar-in-Use.-Murphy-R.-2019-5th-394p-.pdf" target="_blank">
+                                   <button class="btn" style="padding: 3px 8px; font-size: 12px; background-color: var(--light-bg);">
+                                    Preview
+                                  </button>
+                                   </a>
+                                   </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
